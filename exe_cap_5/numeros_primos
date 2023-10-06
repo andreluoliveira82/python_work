@@ -1,0 +1,40 @@
+#André Oliveira
+#05/10/2023 15h21
+#Curso intensivo de Python
+
+#----------------------------------------------------------------
+# Faça um programa que determine se um número é primo ou não. 
+# Um número primo é aquele que é divisível apenas por 1 e por ele mesmo.
+
+import random
+# num = random.randint(2,1000)
+
+sacola_numeros = list(range(2,1001))
+primos = []
+
+for num in sacola_numeros:
+
+    # Verifica se o numero fornecido é maior que 1
+    if num > 1:
+        # Verifica se o número é divisível por algum número entre 2 e a raiz quadrada do número
+        for n in range(2, int(num ** 0.5) + 1):
+            if num % n == 0:
+                # print (f'\nO número {num} não é um número primo.')
+                break #finaliza o loop, pois não é mnais necessário procurar
+        else:
+           #  print (f'\nO número {num} é um número primo')
+           primos.append(num) #Adiciona (anexa) o numero primo encontrado à lista primos
+    else:
+        print (f'\nPor favor insira um número inteiro e maior que 1')
+
+print(f'\nEsistem {len(primos)} números primos no intervalo entre {min(sacola_numeros)} e {max(sacola_numeros)}. São eles')
+
+i = 0
+dif = 0
+
+# imprime os numeros primos e ao lado a diferença entre o numero primo atual e o anterior
+for num in primos:
+    
+    dif = num - i
+    print(f'{num} - {dif} ')
+    i = num

@@ -1,0 +1,51 @@
+#André Oliveira
+#05/10/2023 16h39
+#Curso intensivo de Python
+
+#----------------------------------------------------------------
+#praticando exercicios de testes condicionais
+# 5.3 Cores do alienigenas:
+
+import random
+
+#Tupla (lista) de cores
+cores = ('green','yellow','red')
+
+# programa inica com a pontuação zerada
+pontos = 0
+
+# para cada rodada em um intervalo definido de rodadas
+for rodada in range(1,6):
+
+    #sorteia aleatoreamente uma cor da lista de cores
+    # Fiz assim para deixar o exerício mais dinamico
+
+    sorted_color = random.randint(0,2) #0=green, 1=yellow, 2=red
+    
+    alien_color =cores[sorted_color] #o jogador (alienigena) recebe a cor sorteada
+
+    #Imprime o número da rodada:
+    print(f'rodada: {rodada}')  
+    #a cada rodada imprime a pontuação do jogador:
+    print(f'Seu jogador está {alien_color.capitalize()}')
+
+    # avalia testes para pontuar o jogador de acordo com a cor recebida:
+    if alien_color == cores[0]:
+        pontos += 5
+        print(f'Você recebeu + 5 pontos\nTotal de pontos: {pontos}.')
+    elif alien_color == cores[1]:
+        pontos += 1
+        print(f'Você recebeu + 1 pontos\nTotal de pontos: {pontos}.')
+    elif alien_color == cores[2]:
+        pontos += -2
+        print(f'Você perdeu (-) 2 pontos\nTotal de pontos: {pontos}.')
+
+    # calcula a máxima pontuação possível considerando a quantidade de rodadas multiplicando pelo maior score possível de ser tirado em cada rodada
+    def pontuacaoMaxPossivel(rodada):
+        return (rodada * 5)
+
+    # calcula o aproveitamento do jogador
+    aproveitamento = pontos / pontuacaoMaxPossivel(rodada)
+
+    print(f'Pontos:\t{pontos}/{pontuacaoMaxPossivel(rodada)}')
+    print(f'Aproveitamento de {aproveitamento * 100}%\n')
