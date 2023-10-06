@@ -15,7 +15,7 @@ cores = ('green','yellow','red')
 pontos = 0
 
 # para cada rodada em um intervalo definido de rodadas
-for rodada in range(1,6):
+for rodada in range(1,501):
 
     #sorteia aleatoreamente uma cor da lista de cores
     # Fiz assim para deixar o exerício mais dinamico

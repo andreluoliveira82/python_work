@@ -1,0 +1,48 @@
+#André Oliveira
+#06/10/2023-09h52
+#Curso intensivo de Python
+
+#----------------------------------------------------------------
+#praticando exercicios de testes condicionais e uso de Listas e Loops For
+
+# 5.11 Números Ordinais
+# Armazenar os numeros de 1 a 9 em uma lista
+# em um loop por cada numero na lista adicionar, via verificação ifs, a terminação cardinal de cada numero:
+
+#-------------------------------------------------------------------------------
+#Criando a lista para armazenar os numeros de 1 a 9
+#como toda lista em python começa no indice 0, e queremos começa a nossa lista do numero 1, por isto defininos o ultimo parametro como 10 para termos os 9 numeros desejados:
+#-------------------------------------------------------------------------------
+numeros =list(range(1,9))
+
+ordinais = []
+#-------------------------------------------------------------------------------
+#Verificando a quantidade de elementos presentes na lista
+print(f'A lista contém: {len(numeros)} elementos')
+
+# certificando-nos de que temos o numero 1 e 9 na lista
+print(min(numeros))
+print(max(numeros))
+
+#-------------------------------------------------------------------------------
+
+if numeros: # se a lista nao for vazia
+
+    #para cada num na lista de numeros, concatena o numero com sua respectiva terminação ordinal em ingles pro meio da conversão do num em string unido com a terminação por meio do operado '+'
+    for num in numeros:
+        if num == 1:
+            ordinais.append(str(num) + "st")
+        elif num == 2:
+            ordinais.append(str(num) + "nd")
+        elif num == 3:
+            ordinais.append(str(num) + "rd")
+        else:
+            ordinais.append(str(num) + "th")
+
+#Exibe o resultado em uma lista
+print(f'Lista dos números ordinais em inglês:\n{ordinais}')
+
+print('\nLista dos ordinais de 1 a 9 em inglês:\n')
+for ordinal in ordinais:
+    print(ordinal)
+
