@@ -23,3 +23,15 @@ print(pessoa['nome'].title(),
       pessoa['sobrenome'].title(),
       pessoa['estado_civil']
       )
+
+print("")
+
+# Extraindo apenas as chaves do dicionario
+for chave in pessoa.keys():
+    print(chave.title())
+
+print("")
+
+#Extraindo apenas os valores do dicionarip
+for chave in pessoa.values():
+    print(chave.title())

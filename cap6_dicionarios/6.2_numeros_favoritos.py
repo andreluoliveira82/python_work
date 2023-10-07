@@ -8,7 +8,7 @@
 #Criando o dicionario num_favoritos
 num_favoritos = {
     'andre':'1982',
-    'elzizeth':'28',
+    'elizeth':'28',
     'joao':'7',
     'jordana':'15',
     'mercia':'10',
@@ -34,3 +34,14 @@ print(f'O número favorito de {nome.title()} é {num_fav}.')
 for nome, valor in sorted(num_favoritos.items()):
     #imprime cada nome (chave) e seu respectivo valor
     print(f'O número favorito de {nome.title()} é {valor}.\n')
+
+# extrair apenas os nomes do dicionario com base na chave, já que cada chave é um nome:
+for k in sorted(num_favoritos.keys()):
+    print(f'{k.title()}')
+
+#Imprimindo os valores do dicionario:
+for v in num_favoritos.values():
+    print(f'{v}')
+    if int(v) ==1982:
+        print(f'\nEste é meu número favorito ({v})')
+

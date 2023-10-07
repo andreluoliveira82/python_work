@@ -3,7 +3,6 @@
 #Curso intensivo de Python
 
 #----------------------------------------------------------------
-#praticando exercicios de testes condicionais e uso de Listas e Loops For
 
 # capitulo 6 - dicionarios
 
