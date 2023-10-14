@@ -13,6 +13,8 @@ class RPS(Enum):
 # Somadores de Pontuação
 player_points = 0
 computer_points = 0
+v = 3
+e = 1
 
 print("")
 print(f'Vai começar a batlha PPT. Prepare-se\n\nDigite ... \n1 para Pedra,\n2 para Papel, ou \n3 para Tesoura:\n\n')
@@ -50,26 +52,26 @@ for rodada in range(5):
     #Pedra é melhor que Tesoura
     if player == 1 and computer == 3:
         print("🍾 Você ganhou!")
-        player_points += 1
+        player_points += v
     #se o player escolheu papel e o computer escolheu pedra
     #papel é melhor que Pedra
     elif player == 2 and computer == 1:
         print("🍾 Você ganhou!")
-        player_points += 1
+        player_points += v
     #se o player escolheu Tesoura e o computer escolheu Papel
     #Tesoura é melhor que Papel
     elif player == 3 and computer == 2:
         print("🍾 Você ganhou!")
-        player_points += 1
+        player_points += v
     # se o player e o computer esolheram a mesma coisa
     elif player == computer:
         print("😲 Deu empate!")
-        player_points += 0
-        computer_points += 0
+        player_points += e
+        computer_points += e
     #Em todas as outras sityações contrárias as condições anteriores, o computer ganha
     else:
         print("🐍 Python ganhou!") 
-        computer_points += 1
+        computer_points += v
     
     print("-------------------------------------------")
 
