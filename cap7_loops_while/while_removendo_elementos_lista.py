@@ -1,4 +1,14 @@
 
+# André Oliveira
+# 13/10/2023- 21h00
+# Curso intensivo de Python
+# cap. 7 - Loops While
+#----------------------------------------------------------------------
+
+# usando loop while para remover elementos de uma lista ou dicionario
+# NÃO DEVEMOS MODIFICAR UMA LISTA DENTRO DE UM LOOP FOR. PAG. 169
+
+#----------------------------------------------------------------------
 # começa com uma lista de usuarios que precisam ser verificados:
 # uma lista vazia a fim de armazenar os usuarios confirmados
 #
