@@ -1,0 +1,19 @@
+Resumo do que aprendi sobre o Python com o livro Curso Intensivo de Python de Eric Matthes
+
+No capítulo 1 aprendi como fazer as principais configurações do ambiente em diversos sistemas operacionais (windows, macOS, Linux) para trabalhar com o Python. Aprendi ainda sobre primeiros passos para usar o IDE VSCODE.
+
+No capítulo 2 Aprendi sobre variáveis e tipos de dados. Como evitar erros em nomes de variáveis no Python. Os principais tipos de dados (strings e numeros). Como tratar strings usando diversos métodos como strip(), rstrip(), lstrip(), removeprefix(), removesufix() entre outros. Os principais tipos numericos (int, floats,). aprendi ainda sobre a importancia de usar bem os comentários no codigo, e também vi sobre o poema 'Zen do Python'.
+
+No capítulo 3 foi apresentada uma introdução à listas em Python. Aprendi como acessar, modificar, adicionar e remover elementos em uma lista. Aprendi ainda a organizar uma lista de forma temporária com a função sorted ou de forma definitiva com o o metodo sort(), e também a reverter a ordem da lista com o metodo inverse(). Vi ainda como evitar erros de indices em listas.
+
+No capítulo 4 aprofundamos mais em listas. Vimos como percorrer uma lista com loops em Python. Aprendi a criar uma lista numérica com a função range(). Trabalhamos com parte de uma lista utilizando a tecnica de fatiamento de lista. Aprendi também como definir e utilizar uma tupla.
+
+No capítulo 5 aprendemos como fazer testes condicionais em Python com estruturas condicionais if...elif...else.
+
+No capítulo 6 vimos como trabalhar com dicionários em Python. A principal caracteristica do dicionário é o esquema par 'chave-valor'. Preciso revisar este conteúdo.
+
+No capítulo 7 Aprendi a usar a função input() em Python para coletar informações inseridas pelo usuario no prompt. Vimos que toda informação recbida pela função input() é armazena como uma string (mesmo se for um número). Assim,aprendi a converter uma string em número com a função int(). Neste capítulo também vi como usar os loops while para rodar um trecho de código até que uma determinada condição seja atendida.
+
+No capítulo 8 aprendemos a escrever funções em Python. Vi que a principal característica de uma função é o método inicial __init__ e a definição dos atributos.
+
+No capítulo 9 aprendemos a trabalhar com classes em Python para organizar os programas em trechos de codigos reaproveitáveis e que podem ser compartilhados com outros programadores. lembrando que uma classe deve ser definida com as inciais de cada palavra em Maiúsculas no padrão CamelCase.

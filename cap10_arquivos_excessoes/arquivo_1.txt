@@ -1,0 +1,4 @@
+No capítulo 10 estou aprendendo a manipular arquivos de texto com o Python. Isto é muito legal!
+Eu amo programar!
+Eu amo criar novos jogos!
+E também amo trabalhar com dados.

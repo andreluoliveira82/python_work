@@ -11,6 +11,7 @@ def make_album(artist_name, album_name, musics=None):
     album = {"name": artist_name, "album": album_name}
     if musics:
         album["musics"] = musics
+    
     return album
 
 # Início da pesquisa para armazenar as respostas em uma lista:
