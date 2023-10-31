@@ -1,0 +1,11 @@
+
+    Sistema de soma de valores
+
+    Os números digitados foram [215, 69, 325, 12, 365, 45, 987, 2365, 3, 698, 45, 215]
+
+    Soma: 5344.
+    Produto 44940043109577237496875000.
+    Média: 445.3333333333333 
+    menor: 3 (posição 8)
+    maior: 2365 (posição 7)
+    
