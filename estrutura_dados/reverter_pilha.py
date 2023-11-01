@@ -1,20 +1,20 @@
 
-from estruturas_dados import Pilha
+from estruturas_dados import Stack
 
-p = Pilha()
+st = Stack()
 
-# p.push("andre")
-# print(p.is_empty())
+st.push("andre")
+print(st.is_empty())
 
-for c in "30andre":
-    p.push(c)
+# for c in "30andré":
+#     st.push(c)
 
-print(p.peek())
+# print(st.peek())
 
 reverse = ""
 
-for i in range(len(p.items)):
-    reverse += p.pop()
+for i in range(len(st.items)):
+    reverse += st.pop()
 
 print(reverse.title())
 
