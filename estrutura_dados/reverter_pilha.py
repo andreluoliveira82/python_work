@@ -1,15 +1,15 @@
 
-from estruturas_dados import Stack
+from estruturas import Stack
 
 st = Stack()
 
-st.push("andre")
-print(st.is_empty())
+# st.push("andre")
+# print(st.is_empty())
 
-# for c in "30andré":
-#     st.push(c)
+for c in "30andré":
+    st.push(c)
 
-# print(st.peek())
+print(st.peek())
 
 reverse = ""
 

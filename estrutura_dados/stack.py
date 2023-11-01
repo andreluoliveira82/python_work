@@ -1,7 +1,7 @@
 
-from estruturas_dados import Pilha
+from estruturas import Stack
 
-p = Pilha()
+p = Stack()
 
 print(f"A pilha (lista) está vazia? {p.is_empty()}")
 
