@@ -52,6 +52,7 @@ while palavras:
 
     try:
         palavra1 = palavras[i]
+        palavras.remove(palavra1)
     except:
         pass
     else:
@@ -66,5 +67,5 @@ while palavras:
                 print(f"{palavra1} - {palavra2} ")
                 j += 1
 
-        palavras.remove(palavra1)
-        i+=1
+    
+    i+=1
