@@ -1,7 +1,6 @@
 
 import urllib.request
 from bs4 import BeautifulSoup
-from pathlib import Path
 
 conteudo = ""
 

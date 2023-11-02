@@ -38,5 +38,5 @@ def simulate_line(till_show, max_time):
     
     return tix_sold
 
-venda = simulate_line(5,1)
+venda = simulate_line(15,1)
 print(venda)
