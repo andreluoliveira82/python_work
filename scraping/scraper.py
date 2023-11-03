@@ -8,26 +8,28 @@ class Scraper:
     """
     Modelando um webscraping de um site
     """
-    def __init__(self,site):
+    def __init__(self, site: str):
         """
         Inicializa os atributos.
-        recebe como parâmetro o site a partir do qual será feito o scraping
+        recebe como parâmetro o site a partir do qual será feito o scraping.
+        :param site: str url do site do qual se deseja fazer o scraping
         """
         self.site = site
+     
 
-    def scrape(self):
+    def scrape(self, nome_arquivo: str):
         """
-        Este método será chamado sempre que quisermos fazer um scraping no site passado como parametro.
-        A função urlopen() faz uma solicitação a um site e retorna um objeto Response que contém o xml armazenado com todos os dados adicionais.
-        A função read() retorna o XML do objeto Response. Todo o XML do site está na variável xml
+        Salva um arquivo txt com o texto extraído do site passado como parametro.
+        :param nome_arquivo: str - nome para salvar o arquivo (sem a extensão)
         """
         r = urllib.request.urlopen(self.site)
 
         xml = r.read()
         parser = "html.parser"
         sp = BeautifulSoup(xml,parser)
+        nome_arquivo = nome_arquivo  + ".txt"
 
-        with open("noticias_google.txt", "w",-1,"utf-8") as f:
+        with open(nome_arquivo, "w",-1,"utf-8") as f:
             for item in sp.find_all("item"):
                 title = item.find("title")
                 if title is None:
