@@ -14,7 +14,7 @@ def is_palindromo(word):
 
 # ---------------------------------------------------------------------------
 
-def anagram(word1, word2):
+def is_anagram(word1, word2):
     """
     Organiza as duas palavras em ordem alfabética e as compara.
     se as palavras ordenadas forem iguais, o retorno será True
@@ -37,15 +37,39 @@ def remover_caracteres_especiais(texto):
     return texto_limpo
 # ---------------------------------------------------------------------------
 
+# Função que abre o arquivo txt
+def abrir_arquivo_txt(nome_arquivo):
+    with open(nome_arquivo, 'r', encoding='utf-8') as arquivo:
+        texto = arquivo.read()
 
-# Abre o arquivo para leitura
-with open('noticias_google.txt', 'r', encoding='utf-8') as arquivo:
-    texto = arquivo.read()
+        # tratando o texto antes de substituir os caracteres especiais.
+        texto = texto.replace("-"," ")# substituindo '-' por ' ' (traço por espaço)
+        texto = texto.replace("."," ") # substituindo '.' por ' ' (ponto por espaço)
+        texto = texto.strip() # removendo espaços extras.
+    
+    return texto
 
-    # tratando o texto antes de substituir os caracteres especiais.
-    texto = texto.replace("-"," ")# substituindo '-' por ' ' (traço por espaço)
-    texto = texto.replace("."," ") # substituindo '.' por ' ' (ponto por espaço)
-    texto = texto.strip() # removendo espaços extras.
+# -------------------------------------------------------------------------
+def lista_palavras_sem_repeticao(texto):
+    """ Recebe um texto qualquer e, após tratá-lo, retorna uma lista de palavras únicas ordenada alfabeticamente"""
+
+    # separando as palavras do texto em uma:
+    # aqui temos todos os caracteres do texto original
+    palavras = texto.split()
+
+    # Usando uma lista de compreensão para obter palavras com mais de três caracteres e que não são digitos (numeros) e únicas (que não se repetem)
+    palavras = sorted(
+                [palavra for palavra in palavras 
+                if len(palavra) > 3
+                and not palavra.isdigit()
+                and palavras.count(palavra) == 1]
+                )
+    return palavras
+
+# --------------------------------------------------------------------------
+
+# obtém um texto por meio da função abrir_arquivo_txt
+texto = abrir_arquivo_txt("noticias_google.txt")
 
 # Remove os caracteres especiais do texto
 texto_limpo = remover_caracteres_especiais(texto)
@@ -54,19 +78,10 @@ texto_limpo = remover_caracteres_especiais(texto)
 # print(texto_limpo.upper())
 # print(texto_limpo)
 
-# obtendo uma lista de palavras do texto:
-palavras = texto_limpo.split()
-
-# Usando uma lista de compreensão para obter palavras com mais de três caracteres e que não são digitos (numeros) e únicas (que não se repetem)
-palavras = sorted(
-            [palavra for palavra in palavras 
-             if len(palavra) > 3
-             and not palavra.isdigit()
-             and palavras.count(palavra) == 1]
-            )
+lista_palavras = lista_palavras_sem_repeticao(texto_limpo)
 
 print("--------------------------------------------------")
-print(f"Há {len(palavras)} palavras que não se repetem na lista\n")
+print(f"Há {len(lista_palavras)} palavras que não se repetem na lista\n")
 
 # # exibindo cada palavra na lista de palavras
 # for palavra in sorted(palavras):
@@ -77,18 +92,21 @@ print(f"Há {len(palavras)} palavras que não se repetem na lista\n")
 # compara cada palavra da lista de palavras com a proxima palavra
 # eu fiz isso pq quero brincar com a função 'anagram' que verifica se duas palavras são anagramas. Daí pra deixar tudo mais interessante, fiz esta lógica que pega um arquivo de texto qualquer e extrai uma lista de palavras únicas e compara cada palavra com a a outra passando as duas para a função anagram.
 
-i = 0
+
 j = 1
-cont = 0
-pal = 0
-while palavras:
+anagrams_count = 0
+palindroms_count = 0
+anagramas = []
+palindromos = []
+
+while lista_palavras:
     
     try:
-        palavra1 = palavras[0]
+        palavra1 = lista_palavras[0]
 
-        for palavra in palavras:
+        for palavra in lista_palavras:
             try:
-                palavra2 = palavras[j]
+                palavra2 = lista_palavras[j]
             except:
                 pass
             else:
@@ -96,37 +114,38 @@ while palavras:
                 # print(f"{palavra1} - {palavra2}")
                 
                 # verifica se as palavras comparadas são anagramas
-                if palavra1.lower() != palavra2.lower() and anagram(palavra1, palavra2):
-                    print(f"{palavra1} - {palavra2}")
-                    cont += 1
+                if palavra1.lower() != palavra2.lower() and is_anagram(palavra1, palavra2):
+                    # print(f"{palavra1} - {palavra2}")
+                    anagramas.append(str(palavra1) + "-" + str(palavra2))
+                    anagrams_count += 1
                 j += 1
 
         # print(f"------{i}---------")
         # verificar se a palavra1 é um palindromo
-        palindromos = []
+        
         if is_palindromo(palavra1):
             palindromos.append(palavra1)
-            pal =+ 1
-        palavras.remove(palavra1)
+            palindroms_count =+ 1
+        lista_palavras.remove(palavra1)
 
         j = 1
-        i+=1
 
     except:
-        pass
+        #pass
+        print(f"Erro: ")
     else:
         continue
 
-print ("\n--------------------------------------------------------\n")
+print ("\n--------------------------------------------------------")
 
-if cont == 0:
-    print("Nenhuma anagrama foi encontrado nas palavras deste texto")
+if anagrams_count == 0:
+    print("\nNenhuma anagrama foi encontrado nas palavras deste texto")
 else:
-    print(f"foram localizadas {cont} anagramas")
+    print(f"foram localizadas {anagrams_count} anagramas:\n{anagramas}")
 
-if pal > 0:
-    print(f"Palindromos: \n{palindromos}")
+if palindroms_count > 0:
+    print(f"\nForam localizadas {palindroms_count} palindromos:\n{palindromos}")
 else:
-    print("Nenhum palindromo foi encontrado nas palavras deste texto")
+    print("\nNenhum palindromo foi encontrado nas palavras deste texto")
 
-print("Fim do Programa...\n")
+print("\n-----Fim do Programa-----\n")

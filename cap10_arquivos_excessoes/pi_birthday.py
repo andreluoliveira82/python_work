@@ -7,7 +7,7 @@
 
 from pathlib import Path
 
-file = Path("cap10_arquivos_excessoes\pi_digits.txt") # como o arquivo está salvo no mesmo diretorio que este programa, basta passar o nome do arquivo
+file = Path("cap10_arquivos_excessoes\pi_million_digits.txt") # como o arquivo está salvo no mesmo diretorio que este programa, basta passar o nome do arquivo
 
 # lendo o conteúdo do arquivo
 # na sequencia remove caracteres extras ao final da saída

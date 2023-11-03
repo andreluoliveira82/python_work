@@ -1,5 +1,5 @@
 
-from estruturas_dados import Queue
+from estruturas import Queue
 
 pacientes = ["luiz gabriel","lucas rafael","miguel henrique","joão pedro"]
 

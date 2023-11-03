@@ -17,11 +17,11 @@ contents = file.read_text().rstrip()
 # e na sequencia usamos um loop for para ler cada linha
 lines = contents.splitlines()
 
-pi_sting = " "
+pi_string = " "
 
 for line in lines:
-    pi_sting += line.lstrip()
+    pi_string += line.lstrip()
 
 
-print(pi_sting)
-print(len(pi_sting))
+print(pi_string)
+print(len(pi_string))
