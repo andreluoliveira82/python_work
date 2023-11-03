@@ -27,7 +27,7 @@ class Scraper:
         parser = "html.parser"
         sp = BeautifulSoup(xml,parser)
 
-        with open("news.txt", "w",-1,"utf-8") as f:
+        with open("noticias_google.txt", "w",-1,"utf-8") as f:
             for item in sp.find_all("item"):
                 title = item.find("title")
                 if title is None:
