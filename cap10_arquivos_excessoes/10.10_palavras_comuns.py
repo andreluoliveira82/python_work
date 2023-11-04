@@ -20,7 +20,7 @@ texto = p.remover_caracteres_especiais(texto)
 # print(texto)
 
 
-word = "minas"
+word = "mortos"
 
 contagem = 0
 vezes = ""

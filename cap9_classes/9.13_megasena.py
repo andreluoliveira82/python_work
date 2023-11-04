@@ -1,7 +1,9 @@
 
 # Aproveitando oexercicio dos dados para simular a megasena
 from minhas_classes.dado import Megasena
+
 print("\nInstanciando a megasena com 60 numeros\n")
+
 cartela = Megasena(60)
 
 # cria uma cartela com 10 jogos

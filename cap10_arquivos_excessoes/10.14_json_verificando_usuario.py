@@ -22,7 +22,7 @@ def valida_user_info(
     valida_user_info = False
 
     # verifica se digitou um username válido com mais de 3 caracteres
-    if username.isnumeric or len(username) <= 3:
+    if username.isnumeric() or len(username) <= 3:
         print("\nNome de usuario inválido. o username precisa ser alfanumérico e deve ter mais de 03 letras. Verifique e tente novamente.")
     
     elif int(idade) < 16:

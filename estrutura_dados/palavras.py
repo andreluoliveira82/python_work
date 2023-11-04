@@ -3,7 +3,11 @@ import re
 class Palavra:
     """
     Diversos métodos para verificação de textos
-    """ #---------------------------------------------------------------------------
+    """ 
+    def __init__(self):
+        """Inicializa os atributos"""
+
+    #---------------------------------------------------------------------------
     # Esta função recebe uma palavra como parametro e verifica se é um palindromo, retornando True ou False
 
     def is_palindromo(word):
@@ -41,7 +45,7 @@ class Palavra:
     # ---------------------------------------------------------------------------
 
     # Função que abre o arquivo txt
-    def abrir_arquivo_txt(nome_arquivo:str):
+    def abrir_arquivo_txt(nome_arquivo):
         with open(nome_arquivo, 'r', encoding='utf-8') as arquivo:
             texto = arquivo.read()
 

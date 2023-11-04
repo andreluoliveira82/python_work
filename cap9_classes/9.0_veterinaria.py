@@ -2,6 +2,7 @@
 from minhas_classes.dog import Dog as dg
 
 my_dog = dg("paquito",10)
+
 nome = my_dog.name.title()
 idade = my_dog.age
 
